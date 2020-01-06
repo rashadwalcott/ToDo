@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom'
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
@@ -49,7 +49,7 @@ class App extends React.Component {
   render() {
     // console.log(this.state.todos)
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="App">
         <div className='container'>
         < Header />
@@ -65,7 +65,7 @@ class App extends React.Component {
         <Route path='/about' component={About} />
         </div>
     </div>
-    </HashRouter>
+    </BrowserRouter>
     )
   }
 }
