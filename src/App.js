@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef,useEffect} from 'react';
 import { Route} from 'react-router-dom'
+import { TweenMax, Power3} from 'gsap'
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
@@ -14,6 +15,8 @@ class App extends React.Component {
     todos:[]
   }
   componentDidMount(){
+    // Using axios instead of Fetch for pulling data from API
+
     axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
     .then(res => this.setState({todos: res.data}))
   }
@@ -46,8 +49,9 @@ class App extends React.Component {
     .then(res =>this.setState({todos: [...this.state.todos, res.data]}))
 
   }
+
   render() {
-    // console.log(this.state.todos)
+
   return (
 
       <div className="App">
